@@ -15,7 +15,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "echo \"No test runner configured yet\""
+    "lint": "eslint ."
   },
   "eslintConfig": {
     "extends": [
