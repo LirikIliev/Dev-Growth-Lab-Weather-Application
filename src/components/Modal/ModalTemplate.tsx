@@ -1,16 +1,16 @@
 import { useContext } from 'react';
 
-import Icon from '../../icons/Icon';
+import { useMobileScreenDetection } from '../../hooks/useMobileScreenDetection';
 import { ForecastContext } from '../../context/ForecastContext';
 import { dateFromString } from '../../helpers/convertStringToDate';
 import {
   weatherDailyCodes,
   weatherIconsNames,
 } from '../../helpers/forecastIconCodes';
+import { TEMPERATURE_TYPE } from '../../helpers/config';
+import Icon from '../../icons/Icon';
 
 import classes from './ModalTemplate.module.scss';
-import { useMobileScreenDetection } from '../../hooks/useMobileScreenDetection';
-import { TEMPERATURE_TYPE } from '../../helpers/config';
 
 const ModalTemplate: React.FC = () => {
   const { detailForecast, typeOfTemperature } = useContext(ForecastContext);
@@ -40,7 +40,7 @@ const ModalTemplate: React.FC = () => {
             <div className={classes['Sunrise-wrapper']}>
               <Icon
                 iconName={weatherIconsNames['Sunrise']}
-                size={isMobile ? 25 : 11}
+                size={isMobile ? 20 : 11}
               />
               <h4>Sunrise : </h4>
               <p className={classes['Text']}>{sunriseTime} h.</p>
@@ -51,7 +51,7 @@ const ModalTemplate: React.FC = () => {
           <div className={classes['Sunset-wrapper']}>
             <Icon
               iconName={weatherIconsNames['Sunset']}
-              size={isMobile ? 25 : 11}
+              size={isMobile ? 20 : 11}
             />
             <h4>Sunset : </h4>
             <p>{sunsetTime} h.</p>
@@ -61,7 +61,7 @@ const ModalTemplate: React.FC = () => {
           <div className={classes['Wind-wrapper']}>
             <Icon
               iconName={weatherIconsNames['Wind']}
-              size={isMobile ? 25 : 11}
+              size={isMobile ? 20 : 11}
             />
             <h4>Win speed :</h4>
             <p>{detailForecast?.values?.windSpeedAvg} ms.</p>
@@ -72,7 +72,7 @@ const ModalTemplate: React.FC = () => {
           <div className={classes['Temperature-wrapper']}>
             <Icon
               iconName={weatherIconsNames['Thermometer']}
-              size={isMobile ? 25 : 11}
+              size={isMobile ? 20 : 11}
             />
             <h4>Temperature :</h4>
             <p>
@@ -94,7 +94,7 @@ const ModalTemplate: React.FC = () => {
           <div className={classes['Cloud-Base-wrapper']}>
             <Icon
               iconName={weatherDailyCodes[1001]}
-              size={isMobile ? 25 : 11}
+              size={isMobile ? 20 : 11}
             />
             <h4>Cloud base :</h4>
             <p>{detailForecast?.values?.cloudBaseAvg}</p>
@@ -106,7 +106,7 @@ const ModalTemplate: React.FC = () => {
           <div className={classes['Air-humidity-wrapper']}>
             <Icon
               iconName={weatherIconsNames['Humidity']}
-              size={isMobile ? 25 : 11}
+              size={isMobile ? 20 : 11}
             />
             <h4>Air humidity :</h4>
             <p>{detailForecast?.values?.humidityAvg} %</p>
@@ -116,7 +116,7 @@ const ModalTemplate: React.FC = () => {
           <div className={classes['Uv-index-wrapper']}>
             <Icon
               iconName={weatherIconsNames['UvIndex']}
-              size={isMobile ? 25 : 11}
+              size={isMobile ? 20 : 11}
             />
             <h4>Uv Index :</h4>
             <p>{detailForecast?.values?.uvIndexAvg}</p>

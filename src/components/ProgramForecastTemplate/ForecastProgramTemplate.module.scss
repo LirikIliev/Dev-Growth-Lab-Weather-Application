@@ -38,6 +38,10 @@ $fontColor: rgb(129, 129, 129);
   }
 
   .BodyWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     .Data {
       padding: 0;
       margin: 5px 0;
