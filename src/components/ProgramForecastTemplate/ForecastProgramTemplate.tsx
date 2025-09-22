@@ -1,13 +1,14 @@
-import { ProgramDataInterface } from '../../types/forecastTypes';
-import { weatherDailyCodes } from '../../helpers/forecastIconCodes';
+import { useContext, useMemo } from 'react';
+
 import Icon from '../../icons/Icon';
 import { TEMPERATURE_TYPE } from '../../helpers/config';
+import { ProgramDataInterface } from '../../types/forecastTypes';
+import { dateFromString } from '../../helpers/convertStringToDate';
+import { ForecastContext } from '../../context/ForecastContext';
+import { weatherDailyCodes } from '../../helpers/forecastIconCodes';
+import { useMobileScreenDetection } from '../../hooks/useMobileScreenDetection';
 
 import classes from './ForecastProgramTemplate.module.scss';
-import { useContext, useMemo } from 'react';
-import { ForecastContext } from '../../context/ForecastContext';
-import { dateFromString } from '../../helpers/convertStringToDate';
-import { useMobileScreenDetection } from '../../hooks/useMobileScreenDetection';
 
 interface DayInterface {
   dayData: ProgramDataInterface;
@@ -70,6 +71,15 @@ const DailyForecastTemplate: React.FC<DayInterface> = ({ dayData }) => {
         >{`${month} ${dateOfMonth}`}</h3>
       </div>
       <div className={classes['BodyWrapper']}>
+        <Icon
+          iconName={
+            weatherDailyCodes[weatherCodeMax]
+              ? weatherDailyCodes[weatherCodeMax]
+              : weatherDailyCodes[0]
+          }
+          size={isMobile ? 35 : 60}
+          metrics="px"
+        />
         {temperatureMin ? (
           <p className={classes['Data']}>
             min <strong>{minTemperature}</strong>
@@ -82,15 +92,6 @@ const DailyForecastTemplate: React.FC<DayInterface> = ({ dayData }) => {
           </p>
         ) : null}
       </div>
-      <Icon
-        iconName={
-          weatherDailyCodes[weatherCodeMax]
-            ? weatherDailyCodes[weatherCodeMax]
-            : weatherDailyCodes[0]
-        }
-        size={isMobile ? 55 : 60}
-        metrics="px"
-      />
       <div className={classes['Detail-button']}>Details</div>
     </button>
   );

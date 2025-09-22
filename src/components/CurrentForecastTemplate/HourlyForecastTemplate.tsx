@@ -35,7 +35,7 @@ const HourlyForecastTemplate: React.FC<DailyDataInterface> = ({
               ? weatherDailyCodes[weatherCode]
               : weatherDailyCodes[0]
           }
-          size={isMobile ? 60 : 80}
+          size={isMobile ? 35 : 80}
           styles={{ gridRow: '1 / -1', alignSelf: 'center' }}
         />
       </div>

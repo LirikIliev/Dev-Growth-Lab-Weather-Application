@@ -2,16 +2,16 @@ import { memo, useContext, useEffect } from 'react';
 
 import { ForecastContext } from './context/ForecastContext';
 import LocationSearch from './components/LocationSearch/LocationSearch';
-import Header from './components/Header/Header';
 import DailyForecastTemplateWrapper from './components/ProgramForecastTemplate/ForecastProgramTemplateWrapper';
 import CurrentForecastWrapper from './components/CurrentForecastTemplate/CurrentForecastWrapper';
-import Modal from './components/Modal/Modal';
-
-import './App.css';
-import Errors from './components/Errors/Errors';
 import { useFetchForecastProgramAPI } from './hooks/useFetchForecastProgramAPI';
 import { useFetchForecastDailyAPI } from './hooks/useFetchForecastDailyHourlyAPI';
+import Header from './components/Header/Header';
+import Modal from './components/Modal/Modal';
+import Errors from './components/Errors/Errors';
 import useGetUserLocation from './hooks/useGetUserLocation';
+
+import './App.css';
 
 const App = () => {
   const {

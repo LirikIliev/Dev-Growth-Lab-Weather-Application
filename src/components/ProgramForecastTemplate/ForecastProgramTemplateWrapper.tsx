@@ -31,9 +31,9 @@ const DailyForecastTemplateWrapper: React.FC = () => {
 
   return (
     <div className={classes['DailyWrapper']}>
-      {programLoading ? <LoadingScreen /> : null}
-      {isDailyInformationAvailable ? dayInformation() : null}
-      {isDailyInformationMissed ? <DailyForecastMissingMessage /> : null}
+      {programLoading && <LoadingScreen />}
+      {isDailyInformationAvailable && dayInformation()}
+      {isDailyInformationMissed && <DailyForecastMissingMessage />}
     </div>
   );
 };
