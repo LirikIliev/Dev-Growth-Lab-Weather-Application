@@ -1,0 +1,58 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+ul,
+li,
+div,
+p,
+nav,
+aside,
+section {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+p {
+  margin-top: 0;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.header-section {
+  display: flex;
+  flex: 0.1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main-section {
+  display: flex;
+  flex: 0.8;
+  flex-direction: column;
+  justify-content: center;
+}

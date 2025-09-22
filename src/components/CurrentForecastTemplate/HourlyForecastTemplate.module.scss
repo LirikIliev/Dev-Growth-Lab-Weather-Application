@@ -1,0 +1,21 @@
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+
+  min-width: 100px;
+  max-width: 150px;
+  padding: 0 5px;
+
+  color: white;
+
+  .Icon-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .Hourly-data-wrapper {
+    font-size: 0.8rem;
+  }
+}
