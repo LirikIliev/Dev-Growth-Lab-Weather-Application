@@ -55,9 +55,6 @@ const HourlyForecastWrapper: React.FC = () => {
 
     setDailyForecast(new Map(forecastDailyData));
   }, [hourly]);
-
-  console.log(dailyForecast);
-
   const dailyInfoRender = useCallback(
     () =>
       Array.from(dailyForecast.entries()).map(([title, forecastData]) => {
@@ -67,9 +64,9 @@ const HourlyForecastWrapper: React.FC = () => {
               <p>{title}</p>
             </div>
             <div className={classes['Hourly-wrapper']}>
-              {forecastData.map((hourDate) => (
+              {forecastData.map((hourDate, i) => (
                 <HourlyForecastTemplate
-                  key={hourDate.time}
+                  key={`${hourDate.time}-${i}`}
                   values={hourDate.values}
                   time={hourDate.time}
                 />
